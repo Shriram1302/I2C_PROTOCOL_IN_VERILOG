@@ -79,3 +79,4 @@ module slave_receive_byte(input stat_en,
         end
       end
     end
+endmodule
