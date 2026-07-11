@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_i2c_two_slaves_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_i2c_two_slaves" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="24.758333333 ms"></ZoomStartTime>
+      <ZoomEndTime time="35.848333334 ms"></ZoomEndTime>
+      <Cursor1Time time="34.000000000 ms"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="234"></NameColumnWidth>
+      <ValueColumnWidth column_width="122"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="170" />
+   <wvobject fp_name="/tb_i2c_two_slaves/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/rw" type="logic">
+      <obj_property name="ElementShortName">rw</obj_property>
+      <obj_property name="ObjectShortName">rw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave_addr" type="array">
+      <obj_property name="ElementShortName">slave_addr[6:0]</obj_property>
+      <obj_property name="ObjectShortName">slave_addr[6:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/reg_addr" type="array">
+      <obj_property name="ElementShortName">reg_addr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_addr[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/tx_data" type="array">
+      <obj_property name="ElementShortName">tx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_data[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/rx_data" type="array">
+      <obj_property name="ElementShortName">rx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_data[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/ack_error" type="logic">
+      <obj_property name="ElementShortName">ack_error</obj_property>
+      <obj_property name="ObjectShortName">ack_error</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/sda" type="logic">
+      <obj_property name="ElementShortName">sda</obj_property>
+      <obj_property name="ObjectShortName">sda</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/sck" type="logic">
+      <obj_property name="ElementShortName">sck</obj_property>
+      <obj_property name="ObjectShortName">sck</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/pass_count" type="array">
+      <obj_property name="ElementShortName">pass_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pass_count[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/fail_count" type="array">
+      <obj_property name="ElementShortName">fail_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fail_count[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/rw" type="logic">
+      <obj_property name="ElementShortName">rw</obj_property>
+      <obj_property name="ObjectShortName">rw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/slave_addr" type="array">
+      <obj_property name="ElementShortName">slave_addr[6:0]</obj_property>
+      <obj_property name="ObjectShortName">slave_addr[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/reg_addr" type="array">
+      <obj_property name="ElementShortName">reg_addr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_addr[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/tx_data" type="array">
+      <obj_property name="ElementShortName">tx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/sda" type="logic">
+      <obj_property name="ElementShortName">sda</obj_property>
+      <obj_property name="ObjectShortName">sda</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/sck" type="logic">
+      <obj_property name="ElementShortName">sck</obj_property>
+      <obj_property name="ObjectShortName">sck</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/rx_data" type="array">
+      <obj_property name="ElementShortName">rx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/ack_error" type="logic">
+      <obj_property name="ElementShortName">ack_error</obj_property>
+      <obj_property name="ObjectShortName">ack_error</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/clk_4" type="logic">
+      <obj_property name="ElementShortName">clk_4</obj_property>
+      <obj_property name="ObjectShortName">clk_4</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/start_done" type="logic">
+      <obj_property name="ElementShortName">start_done</obj_property>
+      <obj_property name="ObjectShortName">start_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/rep_start_done" type="logic">
+      <obj_property name="ElementShortName">rep_start_done</obj_property>
+      <obj_property name="ObjectShortName">rep_start_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/read_done" type="logic">
+      <obj_property name="ElementShortName">read_done</obj_property>
+      <obj_property name="ObjectShortName">read_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/m_ack_done" type="logic">
+      <obj_property name="ElementShortName">m_ack_done</obj_property>
+      <obj_property name="ObjectShortName">m_ack_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/m_nack_done" type="logic">
+      <obj_property name="ElementShortName">m_nack_done</obj_property>
+      <obj_property name="ObjectShortName">m_nack_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/byte_done" type="logic">
+      <obj_property name="ElementShortName">byte_done</obj_property>
+      <obj_property name="ObjectShortName">byte_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/ack_done" type="logic">
+      <obj_property name="ElementShortName">ack_done</obj_property>
+      <obj_property name="ObjectShortName">ack_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/stop_done" type="logic">
+      <obj_property name="ElementShortName">stop_done</obj_property>
+      <obj_property name="ObjectShortName">stop_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/ack_received" type="logic">
+      <obj_property name="ElementShortName">ack_received</obj_property>
+      <obj_property name="ObjectShortName">ack_received</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/rx_byte" type="array">
+      <obj_property name="ElementShortName">rx_byte[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_byte[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/sts" type="array">
+      <obj_property name="ElementShortName">sts[4:0]</obj_property>
+      <obj_property name="ObjectShortName">sts[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/start_en" type="logic">
+      <obj_property name="ElementShortName">start_en</obj_property>
+      <obj_property name="ObjectShortName">start_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/rep_start_en" type="logic">
+      <obj_property name="ElementShortName">rep_start_en</obj_property>
+      <obj_property name="ObjectShortName">rep_start_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/read_en" type="logic">
+      <obj_property name="ElementShortName">read_en</obj_property>
+      <obj_property name="ObjectShortName">read_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/m_ack_en" type="logic">
+      <obj_property name="ElementShortName">m_ack_en</obj_property>
+      <obj_property name="ObjectShortName">m_ack_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/m_nack_en" type="logic">
+      <obj_property name="ElementShortName">m_nack_en</obj_property>
+      <obj_property name="ObjectShortName">m_nack_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/byte_en" type="logic">
+      <obj_property name="ElementShortName">byte_en</obj_property>
+      <obj_property name="ObjectShortName">byte_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/ack_en" type="logic">
+      <obj_property name="ElementShortName">ack_en</obj_property>
+      <obj_property name="ObjectShortName">ack_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/stop_en" type="logic">
+      <obj_property name="ElementShortName">stop_en</obj_property>
+      <obj_property name="ObjectShortName">stop_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/current_tx_byte" type="array">
+      <obj_property name="ElementShortName">current_tx_byte[7:0]</obj_property>
+      <obj_property name="ObjectShortName">current_tx_byte[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/start_toggle" type="logic">
+      <obj_property name="ElementShortName">start_toggle</obj_property>
+      <obj_property name="ObjectShortName">start_toggle</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/start_sync0" type="logic">
+      <obj_property name="ElementShortName">start_sync0</obj_property>
+      <obj_property name="ObjectShortName">start_sync0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/start_sync1" type="logic">
+      <obj_property name="ElementShortName">start_sync1</obj_property>
+      <obj_property name="ObjectShortName">start_sync1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/start_sync2" type="logic">
+      <obj_property name="ElementShortName">start_sync2</obj_property>
+      <obj_property name="ObjectShortName">start_sync2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/start_pulse_clk4" type="logic">
+      <obj_property name="ElementShortName">start_pulse_clk4</obj_property>
+      <obj_property name="ObjectShortName">start_pulse_clk4</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/IDLE" type="array">
+      <obj_property name="ElementShortName">IDLE[4:0]</obj_property>
+      <obj_property name="ObjectShortName">IDLE[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/START_M" type="array">
+      <obj_property name="ElementShortName">START_M[4:0]</obj_property>
+      <obj_property name="ObjectShortName">START_M[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/LOAD_SLV_ADDR_W" type="array">
+      <obj_property name="ElementShortName">LOAD_SLV_ADDR_W[4:0]</obj_property>
+      <obj_property name="ObjectShortName">LOAD_SLV_ADDR_W[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/SEND_SLV_ADDR_W" type="array">
+      <obj_property name="ElementShortName">SEND_SLV_ADDR_W[4:0]</obj_property>
+      <obj_property name="ObjectShortName">SEND_SLV_ADDR_W[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/ACK_SLV_ADDR_W" type="array">
+      <obj_property name="ElementShortName">ACK_SLV_ADDR_W[4:0]</obj_property>
+      <obj_property name="ObjectShortName">ACK_SLV_ADDR_W[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/LOAD_REG_ADDR" type="array">
+      <obj_property name="ElementShortName">LOAD_REG_ADDR[4:0]</obj_property>
+      <obj_property name="ObjectShortName">LOAD_REG_ADDR[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/SEND_REG_ADDR" type="array">
+      <obj_property name="ElementShortName">SEND_REG_ADDR[4:0]</obj_property>
+      <obj_property name="ObjectShortName">SEND_REG_ADDR[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/ACK_REG_ADDR" type="array">
+      <obj_property name="ElementShortName">ACK_REG_ADDR[4:0]</obj_property>
+      <obj_property name="ObjectShortName">ACK_REG_ADDR[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/LOAD_TX_DATA" type="array">
+      <obj_property name="ElementShortName">LOAD_TX_DATA[4:0]</obj_property>
+      <obj_property name="ObjectShortName">LOAD_TX_DATA[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/SEND_TX_DATA" type="array">
+      <obj_property name="ElementShortName">SEND_TX_DATA[4:0]</obj_property>
+      <obj_property name="ObjectShortName">SEND_TX_DATA[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/ACK_TX_DATA" type="array">
+      <obj_property name="ElementShortName">ACK_TX_DATA[4:0]</obj_property>
+      <obj_property name="ObjectShortName">ACK_TX_DATA[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/STOP_M" type="array">
+      <obj_property name="ElementShortName">STOP_M[4:0]</obj_property>
+      <obj_property name="ObjectShortName">STOP_M[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/DONE_M" type="array">
+      <obj_property name="ElementShortName">DONE_M[4:0]</obj_property>
+      <obj_property name="ObjectShortName">DONE_M[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/REP_START_M" type="array">
+      <obj_property name="ElementShortName">REP_START_M[4:0]</obj_property>
+      <obj_property name="ObjectShortName">REP_START_M[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/LOAD_SLV_ADDR_R" type="array">
+      <obj_property name="ElementShortName">LOAD_SLV_ADDR_R[4:0]</obj_property>
+      <obj_property name="ObjectShortName">LOAD_SLV_ADDR_R[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/SEND_SLV_ADDR_R" type="array">
+      <obj_property name="ElementShortName">SEND_SLV_ADDR_R[4:0]</obj_property>
+      <obj_property name="ObjectShortName">SEND_SLV_ADDR_R[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/ACK_SLV_ADDR_R" type="array">
+      <obj_property name="ElementShortName">ACK_SLV_ADDR_R[4:0]</obj_property>
+      <obj_property name="ObjectShortName">ACK_SLV_ADDR_R[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/READ_DATA" type="array">
+      <obj_property name="ElementShortName">READ_DATA[4:0]</obj_property>
+      <obj_property name="ObjectShortName">READ_DATA[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/MASTER_NACK_M" type="array">
+      <obj_property name="ElementShortName">MASTER_NACK_M[4:0]</obj_property>
+      <obj_property name="ObjectShortName">MASTER_NACK_M[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/MASTER_ACK_M" type="array">
+      <obj_property name="ElementShortName">MASTER_ACK_M[4:0]</obj_property>
+      <obj_property name="ObjectShortName">MASTER_ACK_M[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/scl" type="logic">
+      <obj_property name="ElementShortName">scl</obj_property>
+      <obj_property name="ObjectShortName">scl</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/sda" type="logic">
+      <obj_property name="ElementShortName">sda</obj_property>
+      <obj_property name="ObjectShortName">sda</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/sda_drive" type="logic">
+      <obj_property name="ElementShortName">sda_drive</obj_property>
+      <obj_property name="ObjectShortName">sda_drive</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/state" type="array">
+      <obj_property name="ElementShortName">state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">state[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/bit_idx" type="array">
+      <obj_property name="ElementShortName">bit_idx[2:0]</obj_property>
+      <obj_property name="ObjectShortName">bit_idx[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/shift_in" type="array">
+      <obj_property name="ElementShortName">shift_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_in[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/cur_read_byte" type="array">
+      <obj_property name="ElementShortName">cur_read_byte[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cur_read_byte[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/is_read" type="logic">
+      <obj_property name="ElementShortName">is_read</obj_property>
+      <obj_property name="ObjectShortName">is_read</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/matched" type="logic">
+      <obj_property name="ElementShortName">matched</obj_property>
+      <obj_property name="ObjectShortName">matched</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/read_idx" type="logic">
+      <obj_property name="ElementShortName">read_idx</obj_property>
+      <obj_property name="ObjectShortName">read_idx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/SLAVE_ADDR" type="array">
+      <obj_property name="ElementShortName">SLAVE_ADDR[6:0]</obj_property>
+      <obj_property name="ObjectShortName">SLAVE_ADDR[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/READ_DATA0" type="array">
+      <obj_property name="ElementShortName">READ_DATA0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">READ_DATA0[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/READ_DATA1" type="array">
+      <obj_property name="ElementShortName">READ_DATA1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">READ_DATA1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/ST_IDLE" type="array">
+      <obj_property name="ElementShortName">ST_IDLE[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ST_IDLE[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/ST_ADDR" type="array">
+      <obj_property name="ElementShortName">ST_ADDR[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ST_ADDR[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/ST_ADDR_ACK" type="array">
+      <obj_property name="ElementShortName">ST_ADDR_ACK[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ST_ADDR_ACK[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/ST_WR_BYTE" type="array">
+      <obj_property name="ElementShortName">ST_WR_BYTE[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ST_WR_BYTE[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/ST_WR_ACK" type="array">
+      <obj_property name="ElementShortName">ST_WR_ACK[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ST_WR_ACK[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/ST_RD_BYTE" type="array">
+      <obj_property name="ElementShortName">ST_RD_BYTE[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ST_RD_BYTE[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/ST_RD_ACK" type="array">
+      <obj_property name="ElementShortName">ST_RD_ACK[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ST_RD_ACK[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/scl" type="logic">
+      <obj_property name="ElementShortName">scl</obj_property>
+      <obj_property name="ObjectShortName">scl</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/sda" type="logic">
+      <obj_property name="ElementShortName">sda</obj_property>
+      <obj_property name="ObjectShortName">sda</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/sda_drive" type="logic">
+      <obj_property name="ElementShortName">sda_drive</obj_property>
+      <obj_property name="ObjectShortName">sda_drive</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/state" type="array">
+      <obj_property name="ElementShortName">state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">state[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/bit_idx" type="array">
+      <obj_property name="ElementShortName">bit_idx[2:0]</obj_property>
+      <obj_property name="ObjectShortName">bit_idx[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/shift_in" type="array">
+      <obj_property name="ElementShortName">shift_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_in[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/cur_read_byte" type="array">
+      <obj_property name="ElementShortName">cur_read_byte[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cur_read_byte[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/is_read" type="logic">
+      <obj_property name="ElementShortName">is_read</obj_property>
+      <obj_property name="ObjectShortName">is_read</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/matched" type="logic">
+      <obj_property name="ElementShortName">matched</obj_property>
+      <obj_property name="ObjectShortName">matched</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/read_idx" type="logic">
+      <obj_property name="ElementShortName">read_idx</obj_property>
+      <obj_property name="ObjectShortName">read_idx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/SLAVE_ADDR" type="array">
+      <obj_property name="ElementShortName">SLAVE_ADDR[6:0]</obj_property>
+      <obj_property name="ObjectShortName">SLAVE_ADDR[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/READ_DATA0" type="array">
+      <obj_property name="ElementShortName">READ_DATA0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">READ_DATA0[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/READ_DATA1" type="array">
+      <obj_property name="ElementShortName">READ_DATA1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">READ_DATA1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/ST_IDLE" type="array">
+      <obj_property name="ElementShortName">ST_IDLE[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ST_IDLE[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/ST_ADDR" type="array">
+      <obj_property name="ElementShortName">ST_ADDR[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ST_ADDR[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/ST_ADDR_ACK" type="array">
+      <obj_property name="ElementShortName">ST_ADDR_ACK[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ST_ADDR_ACK[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/ST_WR_BYTE" type="array">
+      <obj_property name="ElementShortName">ST_WR_BYTE[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ST_WR_BYTE[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/ST_WR_ACK" type="array">
+      <obj_property name="ElementShortName">ST_WR_ACK[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ST_WR_ACK[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/ST_RD_BYTE" type="array">
+      <obj_property name="ElementShortName">ST_RD_BYTE[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ST_RD_BYTE[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave1_magnetometer/ST_RD_ACK" type="array">
+      <obj_property name="ElementShortName">ST_RD_ACK[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ST_RD_ACK[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/rw" type="logic">
+      <obj_property name="ElementShortName">rw</obj_property>
+      <obj_property name="ObjectShortName">rw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/slave_addr" type="array">
+      <obj_property name="ElementShortName">slave_addr[6:0]</obj_property>
+      <obj_property name="ObjectShortName">slave_addr[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/reg_addr" type="array">
+      <obj_property name="ElementShortName">reg_addr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_addr[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/tx_data" type="array">
+      <obj_property name="ElementShortName">tx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/sda" type="logic">
+      <obj_property name="ElementShortName">sda</obj_property>
+      <obj_property name="ObjectShortName">sda</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/sck" type="logic">
+      <obj_property name="ElementShortName">sck</obj_property>
+      <obj_property name="ObjectShortName">sck</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/rx_data" type="array">
+      <obj_property name="ElementShortName">rx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/ack_error" type="logic">
+      <obj_property name="ElementShortName">ack_error</obj_property>
+      <obj_property name="ObjectShortName">ack_error</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/clk_4" type="logic">
+      <obj_property name="ElementShortName">clk_4</obj_property>
+      <obj_property name="ObjectShortName">clk_4</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/start_done" type="logic">
+      <obj_property name="ElementShortName">start_done</obj_property>
+      <obj_property name="ObjectShortName">start_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/rep_start_done" type="logic">
+      <obj_property name="ElementShortName">rep_start_done</obj_property>
+      <obj_property name="ObjectShortName">rep_start_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/read_done" type="logic">
+      <obj_property name="ElementShortName">read_done</obj_property>
+      <obj_property name="ObjectShortName">read_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/m_ack_done" type="logic">
+      <obj_property name="ElementShortName">m_ack_done</obj_property>
+      <obj_property name="ObjectShortName">m_ack_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/m_nack_done" type="logic">
+      <obj_property name="ElementShortName">m_nack_done</obj_property>
+      <obj_property name="ObjectShortName">m_nack_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/byte_done" type="logic">
+      <obj_property name="ElementShortName">byte_done</obj_property>
+      <obj_property name="ObjectShortName">byte_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/ack_done" type="logic">
+      <obj_property name="ElementShortName">ack_done</obj_property>
+      <obj_property name="ObjectShortName">ack_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/stop_done" type="logic">
+      <obj_property name="ElementShortName">stop_done</obj_property>
+      <obj_property name="ObjectShortName">stop_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/ack_received" type="logic">
+      <obj_property name="ElementShortName">ack_received</obj_property>
+      <obj_property name="ObjectShortName">ack_received</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/rx_byte" type="array">
+      <obj_property name="ElementShortName">rx_byte[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_byte[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/sts" type="array">
+      <obj_property name="ElementShortName">sts[4:0]</obj_property>
+      <obj_property name="ObjectShortName">sts[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/start_en" type="logic">
+      <obj_property name="ElementShortName">start_en</obj_property>
+      <obj_property name="ObjectShortName">start_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/rep_start_en" type="logic">
+      <obj_property name="ElementShortName">rep_start_en</obj_property>
+      <obj_property name="ObjectShortName">rep_start_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/read_en" type="logic">
+      <obj_property name="ElementShortName">read_en</obj_property>
+      <obj_property name="ObjectShortName">read_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/m_ack_en" type="logic">
+      <obj_property name="ElementShortName">m_ack_en</obj_property>
+      <obj_property name="ObjectShortName">m_ack_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/m_nack_en" type="logic">
+      <obj_property name="ElementShortName">m_nack_en</obj_property>
+      <obj_property name="ObjectShortName">m_nack_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/byte_en" type="logic">
+      <obj_property name="ElementShortName">byte_en</obj_property>
+      <obj_property name="ObjectShortName">byte_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/ack_en" type="logic">
+      <obj_property name="ElementShortName">ack_en</obj_property>
+      <obj_property name="ObjectShortName">ack_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/stop_en" type="logic">
+      <obj_property name="ElementShortName">stop_en</obj_property>
+      <obj_property name="ObjectShortName">stop_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/current_tx_byte" type="array">
+      <obj_property name="ElementShortName">current_tx_byte[7:0]</obj_property>
+      <obj_property name="ObjectShortName">current_tx_byte[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/start_toggle" type="logic">
+      <obj_property name="ElementShortName">start_toggle</obj_property>
+      <obj_property name="ObjectShortName">start_toggle</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/start_sync0" type="logic">
+      <obj_property name="ElementShortName">start_sync0</obj_property>
+      <obj_property name="ObjectShortName">start_sync0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/start_sync1" type="logic">
+      <obj_property name="ElementShortName">start_sync1</obj_property>
+      <obj_property name="ObjectShortName">start_sync1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/start_sync2" type="logic">
+      <obj_property name="ElementShortName">start_sync2</obj_property>
+      <obj_property name="ObjectShortName">start_sync2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/start_pulse_clk4" type="logic">
+      <obj_property name="ElementShortName">start_pulse_clk4</obj_property>
+      <obj_property name="ObjectShortName">start_pulse_clk4</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/IDLE" type="array">
+      <obj_property name="ElementShortName">IDLE[4:0]</obj_property>
+      <obj_property name="ObjectShortName">IDLE[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/START_M" type="array">
+      <obj_property name="ElementShortName">START_M[4:0]</obj_property>
+      <obj_property name="ObjectShortName">START_M[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/LOAD_SLV_ADDR_W" type="array">
+      <obj_property name="ElementShortName">LOAD_SLV_ADDR_W[4:0]</obj_property>
+      <obj_property name="ObjectShortName">LOAD_SLV_ADDR_W[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/SEND_SLV_ADDR_W" type="array">
+      <obj_property name="ElementShortName">SEND_SLV_ADDR_W[4:0]</obj_property>
+      <obj_property name="ObjectShortName">SEND_SLV_ADDR_W[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/ACK_SLV_ADDR_W" type="array">
+      <obj_property name="ElementShortName">ACK_SLV_ADDR_W[4:0]</obj_property>
+      <obj_property name="ObjectShortName">ACK_SLV_ADDR_W[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/LOAD_REG_ADDR" type="array">
+      <obj_property name="ElementShortName">LOAD_REG_ADDR[4:0]</obj_property>
+      <obj_property name="ObjectShortName">LOAD_REG_ADDR[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/SEND_REG_ADDR" type="array">
+      <obj_property name="ElementShortName">SEND_REG_ADDR[4:0]</obj_property>
+      <obj_property name="ObjectShortName">SEND_REG_ADDR[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/ACK_REG_ADDR" type="array">
+      <obj_property name="ElementShortName">ACK_REG_ADDR[4:0]</obj_property>
+      <obj_property name="ObjectShortName">ACK_REG_ADDR[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/LOAD_TX_DATA" type="array">
+      <obj_property name="ElementShortName">LOAD_TX_DATA[4:0]</obj_property>
+      <obj_property name="ObjectShortName">LOAD_TX_DATA[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/SEND_TX_DATA" type="array">
+      <obj_property name="ElementShortName">SEND_TX_DATA[4:0]</obj_property>
+      <obj_property name="ObjectShortName">SEND_TX_DATA[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/ACK_TX_DATA" type="array">
+      <obj_property name="ElementShortName">ACK_TX_DATA[4:0]</obj_property>
+      <obj_property name="ObjectShortName">ACK_TX_DATA[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/STOP_M" type="array">
+      <obj_property name="ElementShortName">STOP_M[4:0]</obj_property>
+      <obj_property name="ObjectShortName">STOP_M[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/DONE_M" type="array">
+      <obj_property name="ElementShortName">DONE_M[4:0]</obj_property>
+      <obj_property name="ObjectShortName">DONE_M[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/REP_START_M" type="array">
+      <obj_property name="ElementShortName">REP_START_M[4:0]</obj_property>
+      <obj_property name="ObjectShortName">REP_START_M[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/LOAD_SLV_ADDR_R" type="array">
+      <obj_property name="ElementShortName">LOAD_SLV_ADDR_R[4:0]</obj_property>
+      <obj_property name="ObjectShortName">LOAD_SLV_ADDR_R[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/SEND_SLV_ADDR_R" type="array">
+      <obj_property name="ElementShortName">SEND_SLV_ADDR_R[4:0]</obj_property>
+      <obj_property name="ObjectShortName">SEND_SLV_ADDR_R[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/ACK_SLV_ADDR_R" type="array">
+      <obj_property name="ElementShortName">ACK_SLV_ADDR_R[4:0]</obj_property>
+      <obj_property name="ObjectShortName">ACK_SLV_ADDR_R[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/READ_DATA" type="array">
+      <obj_property name="ElementShortName">READ_DATA[4:0]</obj_property>
+      <obj_property name="ObjectShortName">READ_DATA[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/MASTER_NACK_M" type="array">
+      <obj_property name="ElementShortName">MASTER_NACK_M[4:0]</obj_property>
+      <obj_property name="ObjectShortName">MASTER_NACK_M[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/dut/MASTER_ACK_M" type="array">
+      <obj_property name="ElementShortName">MASTER_ACK_M[4:0]</obj_property>
+      <obj_property name="ObjectShortName">MASTER_ACK_M[4:0]</obj_property>
+   </wvobject>
+</wave_config>
