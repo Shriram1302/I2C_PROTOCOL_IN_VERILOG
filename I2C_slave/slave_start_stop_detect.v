@@ -1,0 +1,26 @@
+module slave_start_stop_detect(
+    input clk,
+    input rst,
+    input sck,
+    input sda,
+    output reg start_detect,
+    output reg stop_detect
+);
+    reg sda_prev;
+    always @(posedge clk or negedge rst) begin
+        if(!rst) begin
+            sda_prev     <= 1'b1;
+            start_detect <= 1'b0;
+            stop_detect  <= 1'b0;
+        end
+        else begin
+            start_detect <= 1'b0;
+            stop_detect  <= 1'b0;
+            if(sda_prev && !sda && sck)
+                start_detect <= 1'b1;
+            if(!sda_prev && sda && sck)
+                stop_detect <= 1'b1;
+            sda_prev <= sda;
+        end
+    end
+endmodule
