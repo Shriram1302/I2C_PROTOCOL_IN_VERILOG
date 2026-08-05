@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔌 I2C Protocol in Verilog
+#  I2C Protocol in Verilog
 
 ### A beginner-friendly, step-by-step Verilog implementation of the I2C protocol
 **Built one small block at a time → assembled into a full Master & Slave → deployed on real FPGA hardware.**
