@@ -13,7 +13,7 @@ module send_byte(input stat_en,
 
   localparam IDEL   = 3'b000;
   localparam LOAD   = 3'b001;
-  localparam SETUP  = 3'b101; // NEW: SDA stable, SCK still low
+  localparam SETUP  = 3'b101; 
   localparam SEND_B = 3'b010;
   localparam CHECK  = 3'b011;
   localparam FINISH = 3'b100;
@@ -48,23 +48,23 @@ module send_byte(input stat_en,
                 sts <= LOAD;
             end
             LOAD: begin
-              sck_d_low <= 1;               // SCK low
-              sda_d_low <= !tx_byte[count]; // SDA changes now
+              sck_d_low <= 1;               
+              sda_d_low <= !tx_byte[count]; 
               sts <= SETUP;
             end
             SETUP: begin
-              sck_d_low <= 1;               // SCK still low - SDA settles
+              sck_d_low <= 1;              
               sda_d_low <= !tx_byte[count];
               sts <= SEND_B;
             end
             SEND_B: begin
               sda_d_low <= !tx_byte[count];
-              sck_d_low <= 0;               // SCK rises - slave samples SDA
+              sck_d_low <= 0;               
               sts <= CHECK;
             end
             CHECK: begin
               sda_d_low <= !tx_byte[count];
-              sck_d_low <= 1;               // SCK low - end of bit
+              sck_d_low <= 1;              
               if (count == 0)
                 sts <= FINISH;
               else begin
