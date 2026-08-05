@@ -70,7 +70,7 @@ These are **live-rendered SVG waveforms** (not static screenshots) — the red c
 ### 1️⃣ START Condition
 SDA falls **while SCL is still high** — the one and only signature the bus watches for.
 
-<p align="center"><img src="docs/waveforms/start_condition.svg" width="620" alt="Animated START condition waveform"/></p>
+<p align="center"><img src="waveforms/start_condition.svg" width="620" alt="Animated START condition waveform"/></p>
 
 ```verilog
 // START_BIT/start_bit.v — the whole idea in one transition
@@ -80,22 +80,22 @@ if (stat_en) sda <= 1'b0;   // pull SDA low while scl is still 1'b1
 ### 2️⃣ Slave Address + R/W bit
 The master shifts out the **7-bit address MSB-first**, followed by the **R/W bit** (`0`=write, `1`=read).
 
-<p align="center"><img src="docs/waveforms/slave_address.svg" width="700" alt="Animated slave address and R/W waveform"/></p>
+<p align="center"><img src="waveforms/slave_address.svg" width="700" alt="Animated slave address and R/W waveform"/></p>
 
 ### 3️⃣ ACK — Slave Acknowledges
 The master **releases** SDA (`1'bz`); if the slave pulls it low, that byte was received.
 
-<p align="center"><img src="docs/waveforms/ack.svg" width="600" alt="Animated ACK waveform"/></p>
+<p align="center"><img src="waveforms/ack.svg" width="600" alt="Animated ACK waveform"/></p>
 
 ### 4️⃣ NACK — No Acknowledge
 Same release — but this time **nobody pulls SDA low**, so it floats high. Used to end a read, or signals an error.
 
-<p align="center"><img src="docs/waveforms/nack.svg" width="600" alt="Animated NACK waveform"/></p>
+<p align="center"><img src="waveforms/nack.svg" width="600" alt="Animated NACK waveform"/></p>
 
 ### 5️⃣ STOP Condition
 SDA rises **while SCL is high** — the mirror image of START, and how every transaction ends.
 
-<p align="center"><img src="docs/waveforms/stop_condition.svg" width="620" alt="Animated STOP condition waveform"/></p>
+<p align="center"><img src="waveforms/stop_condition.svg" width="620" alt="Animated STOP condition waveform"/></p>
 
 > 🔑 **Key idea:** SDA may only change while SCL is **low** for normal data bits. SDA changing while SCL is **high** is reserved exclusively for START and STOP — that's what makes those two conditions unambiguous on a shared bus.
 
