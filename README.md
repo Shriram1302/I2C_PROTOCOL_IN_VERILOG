@@ -179,7 +179,9 @@ I2C_PROTOCOL_IN_VERILOG/
 │   ├── stop/                       → generates the I2C STOP condition
 │   ├── I2C_Master V1/              → 1st full master (write-only)
 │   ├── I2C_Master V2/              → 2nd full master (adds read + ack/nack)
-│   └── I2C_Master Final V/         → complete master + testbench vs a slave model
+|   ├── I2C_Master_multy-byte_Read/                → master with Multi Read  + testbench vs a slave model
+|   ├── I2C_Master_multy-byte_Read_and_write/      → master with Multi Read and Write + testbench vs a slave model
+│   └── I2C_Master_single_byte_Read&write/         → master with Single Read and Write + testbench vs a slave model
 │
 ├── 🎯 I2C_slave/                    ← Learn the SLAVE, piece by piece
 │   ├── slave_start_stop_detect.v   → detects START / STOP on the bus
