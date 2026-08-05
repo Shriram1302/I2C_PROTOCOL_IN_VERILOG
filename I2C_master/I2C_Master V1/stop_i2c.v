@@ -36,24 +36,22 @@ module stop_i2c(input stat_en,
               sts <= SDA_LOW;
           end
           SDA_LOW: begin
-            sda_d_low <= 1; // hold SDA low
-            sck_d_low <= 1; // hold SCK low
+            sda_d_low <= 1; 
+            sck_d_low <= 1; 
             sts <= SCK_HIGH;
           end
           SCK_HIGH: begin
-            sda_d_low <= 1; // SDA still low
-            sck_d_low <= 0; // release SCK → high via pull-up
+            sda_d_low <= 1;
+            sck_d_low <= 0;
             sts <= STOP;
           end
           STOP: begin
-            sda_d_low <= 0; // release SDA while SCK is high → valid STOP
+            sda_d_low <= 0; 
             sck_d_low <= 0;
             done      <= 1;
             sts <= WAIT_EN_LOW;
           end
           WAIT_EN_LOW: begin
-            // Stay here until i2c_master de-asserts stat_en,
-            // preventing a second spurious trigger from the pipeline lag
             sda_d_low <= 0;
             sck_d_low <= 0;
             if (!stat_en)
