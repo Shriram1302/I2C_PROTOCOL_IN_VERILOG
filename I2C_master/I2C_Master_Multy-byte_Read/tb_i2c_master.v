@@ -21,7 +21,6 @@ module tb_i2c_two_slaves;
   integer fail_count;
   integer byte_idx;          
 
-  // Open-drain bus pull-ups
   pullup (sda);
   pullup (sck);
 
@@ -42,7 +41,6 @@ module tb_i2c_two_slaves;
     .ack_error(ack_error)
   );
 
-  // Slave 1: magnetometer, address 0x3C
   i2c_slave_model #(
     .SLAVE_ADDR(7'h3C)
   ) slave1_magnetometer (
@@ -50,7 +48,7 @@ module tb_i2c_two_slaves;
     .sda(sda)
   );
 
-  // Slave 2: OLED display, address 0x0D
+
   i2c_slave_model #(
     .SLAVE_ADDR(7'h0D)
   ) slave2_oled (
@@ -58,11 +56,10 @@ module tb_i2c_two_slaves;
     .sda(sda)
   );
 
-  // 100 MHz system clock (10ns period) feeding the internal clock_divider
+
   initial clk = 0;
   always #1250 clk = ~clk;
 
-  // Task updated to handle multi-byte validation arrays dynamically
   task do_transaction(input r_w, input [6:0] addr, input [7:0] rega,
                        input [7:0] wdata, input [7:0] length, 
                        input use_check);
@@ -91,21 +88,20 @@ module tb_i2c_two_slaves;
           pass_count = pass_count + 1;
       end
       else begin
-        // For READ, dynamically capture streaming bytes on rx_valid
+
         byte_idx = 0;
         fork
           begin : capture_stream
             while (!done) begin
               @(posedge clk);
               if (rx_valid) begin
-                // Assign expected test data array based on byte index profile
                 case (byte_idx)
-                  0: expected_data = 8'h11; // X_L
-                  1: expected_data = 8'h22; // X_H
-                  2: expected_data = 8'h33; // Y_L
-                  3: expected_data = 8'h44; // Y_H
-                  4: expected_data = 8'h55; // Z_L
-                  5: expected_data = 8'h66; // Z_H
+                  0: expected_data = 8'h11; 
+                  1: expected_data = 8'h22; 
+                  2: expected_data = 8'h33; 
+                  3: expected_data = 8'h44; 
+                  4: expected_data = 8'h55; 
+                  5: expected_data = 8'h66; 
                   default: expected_data = 8'h00;
                 endcase
 
@@ -123,8 +119,6 @@ module tb_i2c_two_slaves;
                   end
                 end
                 byte_idx = byte_idx + 1;
-                
-                // Keep-lock structure to wait out the extended width of the slow rx_valid strobe
                 while (rx_valid && !done) begin
                   @(posedge clk);
                 end
@@ -151,15 +145,9 @@ module tb_i2c_two_slaves;
     pass_count = 0;
     fail_count = 0;
 
-    // hold reset for a few clocks
     repeat (4) @(posedge clk);
     rst = 1;
     repeat (2) @(posedge clk);
-
-    // =================================================================
-    // Test 1 - Write (Write one byte)
-    // Sequence: START -> 0x3C+W -> ACK -> 0x00 -> ACK -> 0x55 -> ACK -> STOP
-    // =================================================================
     $display("\n===== TEST 1: Single-Byte Write =====");
     do_transaction(
       .r_w(1'b0), 
@@ -170,15 +158,11 @@ module tb_i2c_two_slaves;
       .use_check(1'b0)
     );
 
-    // =================================================================
-    // Test 2 - Read (Read one byte)
-    // Sequence: START -> 0x3C+W -> ACK -> Reg -> ACK -> RepSTART -> 0x3C+R -> ACK -> Read Byte -> NACK -> STOP
-    // =================================================================
     $display("\n===== TEST 2: Single-Byte Read =====");
-    // Setting pointer index address location to 0x00 first inside the slave
+
     do_transaction(1'b0, 7'h3C, 8'h00, 8'h00, 8'd0, 1'b0);
     
-    // Now trigger read transaction (Reads out index 0x00 = 8'h11)
+
     do_transaction(
       .r_w(1'b1), 
       .addr(7'h3C), 
@@ -188,15 +172,11 @@ module tb_i2c_two_slaves;
       .use_check(1'b1)
     );
 
-    // =================================================================
-    // Test 3 - Multi-byte Read (Read X_L, X_H, Y_L, Y_H, Z_L, Z_H)
-    // Sequence: Stream 6 consecutive bytes out of the device continuously
-    // =================================================================
+
     $display("\n===== TEST 3: Multi-Byte Read (6 Bytes: X_L to Z_H) =====");
-    // Setting pointer index address location back to 0x00 for fresh alignment
+
     do_transaction(1'b0, 7'h3C, 8'h00, 8'h00, 8'd0, 1'b0);
 
-    // Streams out 6 bytes sequentially starting from index 0x00 (0x11, 0x22, 0x33, etc.)
     do_transaction(
       .r_w(1'b1), 
       .addr(7'h3C), 
