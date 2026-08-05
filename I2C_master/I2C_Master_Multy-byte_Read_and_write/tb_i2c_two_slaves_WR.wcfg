@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_i2c_two_slaves_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_i2c_two_slaves" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="72,327.916666 us"></ZoomStartTime>
+      <ZoomEndTime time="73,047.916667 us"></ZoomEndTime>
+      <Cursor1Time time="72,752.916666 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="248"></NameColumnWidth>
+      <ValueColumnWidth column_width="243"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="20" />
+   <wvobject fp_name="/tb_i2c_two_slaves/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/rw" type="logic">
+      <obj_property name="ElementShortName">rw</obj_property>
+      <obj_property name="ObjectShortName">rw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/slave_addr" type="array">
+      <obj_property name="ElementShortName">slave_addr[6:0]</obj_property>
+      <obj_property name="ObjectShortName">slave_addr[6:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/reg_addr" type="array">
+      <obj_property name="ElementShortName">reg_addr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_addr[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/tx_buffer" type="array">
+      <obj_property name="ElementShortName">tx_buffer[0:255][7:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_buffer[0:255][7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/rd_len" type="array">
+      <obj_property name="ElementShortName">rd_len[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_len[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/wr_len" type="array">
+      <obj_property name="ElementShortName">wr_len[7:0]</obj_property>
+      <obj_property name="ObjectShortName">wr_len[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/rx_data" type="array">
+      <obj_property name="ElementShortName">rx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/rx_valid" type="logic">
+      <obj_property name="ElementShortName">rx_valid</obj_property>
+      <obj_property name="ObjectShortName">rx_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/ack_error" type="logic">
+      <obj_property name="ElementShortName">ack_error</obj_property>
+      <obj_property name="ObjectShortName">ack_error</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/sda" type="logic">
+      <obj_property name="ElementShortName">sda</obj_property>
+      <obj_property name="ObjectShortName">sda</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/sck" type="logic">
+      <obj_property name="ElementShortName">sck</obj_property>
+      <obj_property name="ObjectShortName">sck</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/pass_count" type="array">
+      <obj_property name="ElementShortName">pass_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pass_count[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/fail_count" type="array">
+      <obj_property name="ElementShortName">fail_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fail_count[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/byte_idx" type="array">
+      <obj_property name="ElementShortName">byte_idx[31:0]</obj_property>
+      <obj_property name="ObjectShortName">byte_idx[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/k" type="array">
+      <obj_property name="ElementShortName">k[31:0]</obj_property>
+      <obj_property name="ObjectShortName">k[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i2c_two_slaves/expected_buffer" type="array">
+      <obj_property name="ElementShortName">expected_buffer[0:255][7:0]</obj_property>
+      <obj_property name="ObjectShortName">expected_buffer[0:255][7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+</wave_config>
