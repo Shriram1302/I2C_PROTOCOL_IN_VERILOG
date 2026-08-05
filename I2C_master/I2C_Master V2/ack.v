@@ -1,11 +1,3 @@
-// Same architectural fix applied: ack returns to IDEL and releases
-// the bus whenever stat_en drops, preventing it from clamping SCK
-// during the STOP phase.
-//
-// Original bug: IDEL state set sck_d_low=1 (holding SCK low while idle).
-// That was fixed previously. This fix adds stat_en gating so the module
-// does not linger driving bus lines after the ACK window closes.
-
 module ack(input clk,
            input rst,
            input stat_en,
@@ -39,8 +31,6 @@ module ack(input clk,
       end
       else begin
         done <= 0;
-        // Return to IDEL and release bus when stat_en drops
-        // (except in DONE where we are completing the handshake)
         if (!stat_en && sts != DONE) begin
           sts       <= IDEL;
           sda_d_low <= 0;
@@ -55,14 +45,13 @@ module ack(input clk,
                 sts <= R_SDA;
             end
             R_SDA: begin
-              // Release SDA so slave can pull it low for ACK
               sda_d_low <= 0;
-              sck_d_low <= 1; // hold SCK low before rising edge
+              sck_d_low <= 1;
               sts <= CLK_H;
             end
             CLK_H: begin
               sda_d_low <= 0;
-              sck_d_low <= 0; // release SCK: goes high, slave holds SDA
+              sck_d_low <= 0; 
               sts <= S_ACK;
             end
             S_ACK: begin
@@ -71,12 +60,12 @@ module ack(input clk,
             end
             CLK_L: begin
               sda_d_low <= 0;
-              sck_d_low <= 1; // pull SCK low to end ACK clock
+              sck_d_low <= 1;
               sts <= DONE;
             end
             DONE: begin
               sda_d_low <= 0;
-              sck_d_low <= 0; // release bus before hand-off to stop_i2c
+              sck_d_low <= 0; 
               done      <= 1;
               sts <= IDEL;
             end
