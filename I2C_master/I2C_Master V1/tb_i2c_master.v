@@ -2,9 +2,7 @@
 
 module tb_i2c_master;
 
-//-------------------------------------
-// Testbench Signals
-//-------------------------------------
+
 reg clk;
 reg rst;
 reg start;
@@ -17,9 +15,7 @@ wire ack_error;
 
 reg slave_drive;
 
-//-------------------------------------
-// DUT
-//-------------------------------------
+
 i2c_master dut (
     .clk(clk),
     .rst(rst),
@@ -31,31 +27,15 @@ i2c_master dut (
     .ack_error(ack_error)
 );
 
-//-------------------------------------
-// Open Drain Slave
-//-------------------------------------
+
 assign sda = (slave_drive) ? 1'b0 : 1'bz;
 
-//-------------------------------------
-// 12 MHz Clock
-//-------------------------------------
 initial
     clk = 0;
 
 always
     #41.666 clk = ~clk;
 
-//-------------------------------------
-// Dump File
-//-------------------------------------
-initial begin
-    $dumpfile("i2c_master.vcd");
-    $dumpvars(0, tb_i2c_master);
-end;
-
-//-------------------------------------
-// Test Sequence
-//-------------------------------------
 initial begin
 
     rst = 0;
