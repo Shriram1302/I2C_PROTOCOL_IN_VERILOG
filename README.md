@@ -9,7 +9,7 @@
 [![Level](https://img.shields.io/badge/Level-Beginner%20Friendly-2dd4bf?style=for-the-badge)](.)
 [![Simulator](https://img.shields.io/badge/Simulator-Icarus%20%2B%20GTKWave-fbbf24?style=for-the-badge)](.)
 [![Hardware](https://img.shields.io/badge/Deployed%20on-FPGA-ff7edb?style=for-the-badge)](.)
-[![License](https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge)](LICENSE)
+
 
 *If you're learning digital design, FSMs, or communication protocols — read this repo top to bottom like a tutorial, not just clone-and-run.*
 
