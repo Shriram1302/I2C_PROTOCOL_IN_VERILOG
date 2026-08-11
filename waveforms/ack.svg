@@ -22,10 +22,10 @@
     </text>
 
   <text x="10" y="60" font-size="13" fill="#fbbf24" font-weight="700">SCL</text>
-  <polyline points="40,55 160,55 160,55 160,95 220,95 220,95 220,55 280,55 400,55" fill="none" stroke="#fbbf24" stroke-width="3" stroke-linejoin="round" filter="url(#glow-ack)"/>
+  <polyline points="40,95 160,95 160,55 220,55 220,95 400,95" fill="none" stroke="#fbbf24" stroke-width="3" stroke-linejoin="round" filter="url(#glow-ack)"/>
 
   <text x="10" y="150" font-size="13" fill="#2dd4bf" font-weight="700">SDA</text>
-  <polyline points="40,145 160,145 220,145 220,145 220,185 280,185 400,185" fill="none" stroke="#2dd4bf" stroke-width="3" stroke-linejoin="round" filter="url(#glow-ack)"/>
+  <polyline points="40,145 150,145 150,185 230,185 230,145 400,145" fill="none" stroke="#2dd4bf" stroke-width="3" stroke-linejoin="round" filter="url(#glow-ack)"/>
 
   <line x1="40" y1="0" x2="40" y2="0" stroke="#ff3d68" stroke-width="2">
   </line>
