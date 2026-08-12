@@ -7,11 +7,9 @@ module i2c_slave_model
     inout  sda
 );
 
-  // Open-drain bus drive
   reg sda_drive;
   assign sda = sda_drive ? 1'b0 : 1'bz;
 
-  // FSM states (structure preserved from original model)
   localparam ST_IDLE     = 3'd0;
   localparam ST_ADDR     = 3'd1;
   localparam ST_ADDR_ACK = 3'd2;
@@ -27,10 +25,9 @@ module i2c_slave_model
   reg       is_read;
   reg       matched;
 
-  // EEPROM-style internal memory (256 bytes) + 8-bit pointer
   reg [7:0] memory [0:255];
-  reg [7:0] reg_ptr;      // Internal pointer tracking current read/write index
-  reg       first_byte;   // 1 = next received byte is the register-pointer byte
+  reg [7:0] reg_ptr;     
+  reg       first_byte;   
 
   integer i;
 
@@ -45,13 +42,12 @@ module i2c_slave_model
     first_byte    = 1'b1;
     sda_drive     = 1'b0;
 
-    // Clear memory by default; testbench may pre-load specific
-    // locations hierarchically before a transaction.
+
     for (i = 0; i < 256; i = i + 1)
       memory[i] = 8'h00;
   end
 
-  // Asynchronous START detection
+
   always @(negedge sda) begin
     if (scl) begin
       state   <= ST_ADDR;
@@ -59,14 +55,13 @@ module i2c_slave_model
     end
   end
 
-  // Asynchronous STOP detection
   always @(posedge sda) begin
     if (scl) begin
       state <= ST_IDLE;
     end
   end
 
-  // Latch inputs on SCL rising edge
+
   always @(posedge scl) begin
     case (state)
       ST_ADDR: begin
@@ -83,12 +78,12 @@ module i2c_slave_model
       ST_ADDR_ACK: begin
         if (matched) begin
           if (is_read) begin
-            cur_read_byte <= memory[reg_ptr]; // Load byte at current pointer
+            cur_read_byte <= memory[reg_ptr]; 
             state         <= ST_RD_BYTE;
             bit_idx       <= 3'd7;
           end
           else begin
-            first_byte <= 1'b1; // Next byte received is the register pointer
+            first_byte <= 1'b1; 
             state      <= ST_WR_BYTE;
             bit_idx    <= 3'd7;
           end
@@ -108,12 +103,11 @@ module i2c_slave_model
 
       ST_WR_ACK: begin
         if (first_byte) begin
-          // First byte after Slave Address + Write is always the register pointer
+
           reg_ptr    <= shift_in;
           first_byte <= 1'b0;
         end
         else begin
-          // Every following byte is stored into memory, pointer auto-increments
           memory[reg_ptr] <= shift_in;
           reg_ptr         <= reg_ptr + 1'b1;
         end
@@ -130,11 +124,9 @@ module i2c_slave_model
 
       ST_RD_ACK: begin
         if (sda) begin
-          // Master NACKs - end of read burst
           state <= ST_IDLE;
         end
         else begin
-          // Master ACKs - auto-increment pointer and load next byte
           reg_ptr       <= reg_ptr + 1'b1;
           cur_read_byte <= memory[reg_ptr + 1'b1];
           state         <= ST_RD_BYTE;
@@ -146,7 +138,6 @@ module i2c_slave_model
     endcase
   end
 
-  // Output drive configuration on SCL falling edge
   always @(negedge scl) begin
     case (state)
       ST_ADDR_ACK: sda_drive <= matched;
