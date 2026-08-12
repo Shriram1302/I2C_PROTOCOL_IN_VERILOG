@@ -23,10 +23,9 @@ module tb_i2c_two_slaves;
   integer byte_idx;
   integer k;
 
-  // Expected-data buffer used by read tests for automatic verification
   reg [7:0] expected_buffer [0:255];
 
-  // Open-drain bus pull-ups
+
   pullup (sda);
   pullup (sck);
 
@@ -48,7 +47,7 @@ module tb_i2c_two_slaves;
     .ack_error(ack_error)
   );
 
-  // Slave 1: magnetometer/EEPROM-style memory device, address 0x3C
+
   i2c_slave_model #(
     .SLAVE_ADDR(7'h3C)
   ) slave1_magnetometer (
@@ -56,22 +55,10 @@ module tb_i2c_two_slaves;
     .sda(sda)
   );
 
-  // Slave 2: OLED display, address 0x0D
-//  i2c_slave_model #(
-//    .SLAVE_ADDR(7'h0D)
-//  ) slave2_oled (
-//    .scl(sck),
-//    .sda(sda)
-//  );
 
-  // 100 MHz system clock (10ns period) feeding the internal clock_divider
   initial clk = 0;
   always #1250 clk = ~clk;
 
-  // ---------------------------------------------------------------
-  // Task: perform a write transaction (single or multi byte).
-  // Caller must load tx_buffer[0 .. wlen-1] before calling.
-  // ---------------------------------------------------------------
   task do_write(input [6:0] addr, input [7:0] rega, input [7:0] wlen);
     begin
       @(posedge clk);
@@ -97,11 +84,7 @@ module tb_i2c_two_slaves;
     end
   endtask
 
-  // ---------------------------------------------------------------
-  // Task: perform a read transaction (single or multi byte).
-  // Caller must load expected_buffer[0 .. rlen-1] before calling
-  // if use_check is set.
-  // ---------------------------------------------------------------
+
   task do_read(input [6:0] addr, input [7:0] rega, input [7:0] rlen,
                input use_check);
     begin
@@ -174,10 +157,7 @@ module tb_i2c_two_slaves;
     rst = 1;
     repeat (2) @(posedge clk);
 
-    // =================================================================
-    // Test 1 - Single-Byte Write
-    // START -> 0x3C+W -> ACK -> reg(0x00) -> ACK -> data(0x55) -> ACK -> STOP
-    // =================================================================
+
     $display("\n===== TEST 1: Single-Byte Write =====");
     tx_buffer[0] = 8'h55;
     do_write(7'h3C, 8'h00, 8'd1);
@@ -191,10 +171,7 @@ module tb_i2c_two_slaves;
       fail_count = fail_count + 1;
     end
 
-    // =================================================================
-    // Test 2 - Multi-Byte Write (4 bytes)
-    // Writes 0x11,0x22,0x33,0x44 into memory[0..3]
-    // =================================================================
+
     $display("\n===== TEST 2: Multi-Byte Write (4 Bytes) =====");
     tx_buffer[0] = 8'h11;
     tx_buffer[1] = 8'h22;
@@ -218,18 +195,11 @@ module tb_i2c_two_slaves;
       fail_count = fail_count + 1;
     end
 
-    // =================================================================
-    // Test 3 - Single-Byte Read
-    // Reads back memory[0], written as 0x11 in Test 2
-    // =================================================================
+
     $display("\n===== TEST 3: Single-Byte Read =====");
     expected_buffer[0] = 8'h11;
     do_read(7'h3C, 8'h00, 8'd1, 1'b1);
 
-    // =================================================================
-    // Test 4 - Multi-Byte Read (6 bytes)
-    // Pre-load slave memory directly, then stream 6 bytes back out
-    // =================================================================
     $display("\n===== TEST 4: Multi-Byte Read (6 Bytes) =====");
     slave1_magnetometer.memory[0] = 8'h11;
     slave1_magnetometer.memory[1] = 8'h22;
@@ -252,9 +222,6 @@ module tb_i2c_two_slaves;
     $finish;
   end
 
-  initial begin
-    $dumpfile("i2c_two_slaves_tb.vcd");
-    $dumpvars(0, tb_i2c_two_slaves);
-  end
+
 
 endmodule
