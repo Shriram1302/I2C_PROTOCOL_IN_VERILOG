@@ -19,11 +19,10 @@ module tb_i2c_two_slaves;
   integer pass_count;
   integer fail_count;
 
-  // Open-drain bus pull-ups required for high-impedance (1'bz) configurations
+
   pullup (sda);
   pullup (sck);
 
-  // Instantiate the provided I2C Master[cite: 1]
   i2c_master dut (
     .clk(clk),
     .rst(rst),
@@ -39,7 +38,7 @@ module tb_i2c_two_slaves;
     .ack_error(ack_error)
   );
 
-  // Slave 1: Target Address 7'h3C
+
   i2c_slave #(
     .SLAVE_ADDR(7'h3C)
   ) slave1_magnetometer (
@@ -49,7 +48,7 @@ module tb_i2c_two_slaves;
     .sck(sck)
   );
 
-  // Slave 2: Target Address 7'h0D
+
   i2c_slave #(
     .SLAVE_ADDR(7'h0D)
   ) slave2_oled (
@@ -59,11 +58,10 @@ module tb_i2c_two_slaves;
     .sck(sck)
   );
 
-  // Clock Generation 
   initial clk = 0;
-  always #10 clk = ~clk; // Standard simulation clock frequency
+  always #10 clk = ~clk; 
 
-  // Transaction task adjusted to align with master timing structures[cite: 1]
+ 
   task do_transaction(input r_w, input [6:0] addr, input [7:0] rega,
                        input [7:0] wdata, input [7:0] expected_rdata,
                        input use_check);
@@ -72,7 +70,7 @@ module tb_i2c_two_slaves;
       slave_addr = addr;
       reg_addr   = rega;
       tx_data    = wdata;
-      rw         = r_w; // 0 for write, 1 for read[cite: 1]
+      rw         = r_w; 
       start      = 1;
       @(posedge clk);
       start      = 0;
@@ -103,7 +101,7 @@ module tb_i2c_two_slaves;
           end
         end
       end
-      // Yield an additional cycle to let FSM clear out cleanly
+
       repeat(2) @(posedge clk);
     end
   endtask
@@ -124,26 +122,25 @@ module tb_i2c_two_slaves;
     repeat (5) @(posedge clk);
 
     $display("\n===== Slave 1 (Magnetometer, 0x3C) =====");
-    // Write data 8'h1D into register 8'h00
+
     do_transaction(1'b0, 7'h3C, 8'h00, 8'h1D, 8'h00, 1'b0);
-    // Read it back via Repeated Start to verify the content
+
     do_transaction(1'b1, 7'h3C, 8'h00, 8'h00, 8'h1D, 1'b1);
 
-    // Write data 8'h34 into register 8'h01
     do_transaction(1'b0, 7'h3C, 8'h01, 8'h34, 8'h00, 1'b0);
-    // Read it back via Repeated Start to verify the content
+
     do_transaction(1'b1, 7'h3C, 8'h01, 8'h00, 8'h34, 1'b1);
 
 
     $display("\n===== Slave 2 (OLED Display, 0x0D) =====");
-    // Write data 8'hFF into register 8'h05
+
     do_transaction(1'b0, 7'h0D, 8'h05, 8'hFF, 8'h00, 1'b0);
-    // Read it back to verify the content
+
     do_transaction(1'b1, 7'h0D, 8'h05, 8'h00, 8'hFF, 1'b1);
 
-    // Write data 8'h12 into register 8'h06
+
     do_transaction(1'b0, 7'h0D, 8'h06, 8'h12, 8'h00, 1'b0);
-    // Read it back to verify the content
+
     do_transaction(1'b1, 7'h0D, 8'h06, 8'h00, 8'h12, 1'b1);
 
     #200;
