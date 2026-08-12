@@ -31,10 +31,7 @@ module master_ack(input clk,
       else begin
         done<=0;
         case(sts)
-          IDEL: begin
-            // FIX: same immediate-handoff race as ack.v/send_byte.v -
-            // read_byte hands off to master_ack while holding SCK low;
-            // hold here too if stat_en is already asserted this cycle.
+          IDEL: begin.
             sda_d_low <= 0;
             sck_d_low <= stat_en ? 1'b1 : 1'b0;
             done <= 0;
