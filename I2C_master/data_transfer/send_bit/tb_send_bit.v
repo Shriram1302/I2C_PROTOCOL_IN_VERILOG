@@ -25,7 +25,7 @@ sent_bit uut (
 
 initial begin
     clk = 0;
-    forever #1250 clk = ~clk;   // 2.5 us period
+    forever #1250 clk = ~clk;   
 end
 
 initial begin
