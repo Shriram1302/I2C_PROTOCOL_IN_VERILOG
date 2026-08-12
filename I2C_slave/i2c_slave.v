@@ -33,7 +33,7 @@ module i2c_slave #(
   reg master_ack;
   reg repeated_start;
   
-  // Resolve sda tristate drivers at the top level
+  
   assign sda = (slave_ack_en && sda_oe_ack)     ? sda_out_ack :
                (slave_send_byte_en && sda_oe_send) ? sda_out_send : 1'bz;
   
