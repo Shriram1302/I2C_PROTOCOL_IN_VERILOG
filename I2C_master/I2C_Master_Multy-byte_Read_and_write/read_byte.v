@@ -43,11 +43,6 @@ module read_byte(input stat_en,
         else begin
           case (sts)
             IDEL: begin
-              // FIX: same immediate-handoff race as ack.v/send_byte.v -
-              // ack (or repeated_start) hands off to read_byte while
-              // holding SCK low; if stat_en is already asserted this
-              // cycle, keep holding instead of releasing to avoid a
-              // spurious extra clock edge.
               sda_d_low <= 0;
               sck_d_low <= stat_en ? 1'b1 : 1'b0;
               count     <= 3'b111;
