@@ -30,27 +30,23 @@ module stop_i2c(input stat_en,
         done <= 0;
         case (sts)
           IDEL: begin
-            // FIX: same immediate-handoff race as ack.v/send_byte.v -
-            // ack or master_nack hands off to stop_i2c while holding
-            // SCK low; hold here too if stat_en is already asserted
-            // this cycle.
             sda_d_low <= 0;
             sck_d_low <= stat_en ? 1'b1 : 1'b0;
             if (stat_en)
               sts <= SDA_LOW;
           end
           SDA_LOW: begin
-            sda_d_low <= 1; // hold SDA low
-            sck_d_low <= 1; // hold SCK low
+            sda_d_low <= 1; 
+            sck_d_low <= 1; 
             sts <= SCK_HIGH;
           end
           SCK_HIGH: begin
-            sda_d_low <= 1; // SDA still low
-            sck_d_low <= 0; // release SCK -> high via pull-up
+            sda_d_low <= 1; 
+            sck_d_low <= 0; 
             sts <= STOP;
           end
           STOP: begin
-            sda_d_low <= 0; // release SDA while SCK is high -> valid STOP
+            sda_d_low <= 0; 
             sck_d_low <= 0;
             done      <= 1;
             sts <= WAIT_EN_LOW;
