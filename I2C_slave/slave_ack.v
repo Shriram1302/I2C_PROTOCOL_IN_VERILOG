@@ -46,11 +46,11 @@ module slave_ack(
                     end
                     SDA_LOW: begin
                         sda_d_low <= 1'b1;
-                        if(!sck_prev && sck) // Wait for SCK rising edge
+                        if(!sck_prev && sck) 
                             sts <= WAIT_SCL_H;
                     end
                     WAIT_SCL_H: begin
-                        if(sck_prev && !sck) // Wait for SCK falling edge
+                        if(sck_prev && !sck)
                             sts <= WAIT_SCL_L;
                     end
                     WAIT_SCL_L: begin
