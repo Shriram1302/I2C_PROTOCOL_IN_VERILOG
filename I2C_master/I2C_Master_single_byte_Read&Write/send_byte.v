@@ -13,7 +13,7 @@ module send_byte(input stat_en,
 
   localparam IDEL   = 3'b000;
   localparam LOAD   = 3'b001;
-  localparam SETUP  = 3'b101; // SDA stable, SCK still low
+  localparam SETUP  = 3'b101;
   localparam SEND_B = 3'b010;
   localparam CHECK  = 3'b011;
   localparam FINISH = 3'b100;
@@ -42,20 +42,6 @@ module send_byte(input stat_en,
         else begin
           case (sts)
             IDEL: begin
-              // FIX: previously this unconditionally released SCK
-              // (sck_d_low <= 0) here. start_i2c hands off to send_byte
-              // while holding BOTH sda and sck low. Since byte_en is
-              // already high the very cycle this IDEL state runs (an
-              // immediate handoff, not genuine bus-idle time), releasing
-              // both sda and sck together in the same cycle makes them
-              // rise simultaneously - a race the slave's edge-triggered
-              // STOP detector (posedge sda while scl==1) can catch as a
-              // false STOP condition after just one address bit.
-              //
-              // If stat_en is already asserted on entry, keep SCK held
-              // low instead of releasing it; LOAD takes over the
-              // bit-clock sequencing safely from there. Only release SCK
-              // here when send_byte is genuinely idle (stat_en low).
               sda_d_low <= 0;
               sck_d_low <= stat_en ? 1'b1 : 1'b0;
               count     <= 3'b111;
@@ -63,23 +49,23 @@ module send_byte(input stat_en,
                 sts <= LOAD;
             end
             LOAD: begin
-              sck_d_low <= 1;               // SCK low
-              sda_d_low <= !tx_byte[count]; // SDA changes now
+              sck_d_low <= 1;              
+              sda_d_low <= !tx_byte[count]; 
               sts <= SETUP;
             end
             SETUP: begin
-              sck_d_low <= 1;               // SCK still low - SDA settles
+              sck_d_low <= 1;               
               sda_d_low <= !tx_byte[count];
               sts <= SEND_B;
             end
             SEND_B: begin
               sda_d_low <= !tx_byte[count];
-              sck_d_low <= 0;               // SCK rises - slave samples SDA
+              sck_d_low <= 0;             
               sts <= CHECK;
             end
             CHECK: begin
               sda_d_low <= !tx_byte[count];
-              sck_d_low <= 1;               // SCK low - end of bit
+              sck_d_low <= 1;              
               if (count == 0)
                 sts <= FINISH;
               else begin
@@ -89,15 +75,13 @@ module send_byte(input stat_en,
             end
             FINISH: begin
               sda_d_low <= 0;
-              sck_d_low <= 1;               // hold SCK low - clean handoff to ack
+              sck_d_low <= 1;               
               done      <= 1;
               sts <= WAIT_EN_LOW;
             end
             WAIT_EN_LOW: begin
               sda_d_low <= 0;
               sck_d_low <= 1;
-              // hold here until i2c_master deasserts stat_en, so we
-              // don't race back into LOAD while stat_en is still high
               if (!stat_en)
                 sts <= IDEL;
             end
