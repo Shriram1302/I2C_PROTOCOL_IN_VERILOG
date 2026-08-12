@@ -35,19 +35,19 @@ module start_i2c(input stat_en,
               sts <= START;
           end
           START: begin
-            sda_d_low <= 1; // pull SDA low - SCK released (high) → valid START
+            sda_d_low <= 1; 
             sck_d_low <= 0;
             sts <= SCK_LOW;
           end
           SCK_LOW: begin
-            sda_d_low <= 1; // keep SDA low
-            sck_d_low <= 1; // pull SCK low - ready for first data bit
+            sda_d_low <= 1; 
+            sck_d_low <= 1; 
             done      <= 1;
             sts <= WAIT_EN_LOW;
           end
           WAIT_EN_LOW: begin
-            sda_d_low <= 1; // hold SDA low (send_byte takes over next cycle)
-            sck_d_low <= 1; // hold SCK low
+            sda_d_low <= 1; 
+            sck_d_low <= 1; 
             if (!stat_en)
               sts <= IDEL;
           end
